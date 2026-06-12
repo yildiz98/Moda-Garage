@@ -1487,3 +1487,54 @@ dialog,
   background:#00e5ff !important;
   color:#050b14 !important;
 }
+/* FINAL FIX - Müşteri/Firma normal görünüm */
+
+.menu .menu-item[data-page="customers"]:not(.active),
+.sidebar .menu .menu-item[data-page="customers"]:not(.active){
+  background:#06101b !important;
+  background-image:none !important;
+  color:#d8eaf2 !important;
+  border:1px solid rgba(0,229,255,.22) !important;
+  box-shadow:none !important;
+}
+
+.menu .menu-item[data-page="customers"]:not(.active) i,
+.sidebar .menu .menu-item[data-page="customers"]:not(.active) i{
+  color:#d8eaf2 !important;
+}
+
+.menu .menu-item[data-page="customers"]:hover,
+.sidebar .menu .menu-item[data-page="customers"]:hover{
+  background:rgba(0,229,255,.12) !important;
+  background-image:none !important;
+  color:#00e5ff !important;
+  border-color:#00e5ff !important;
+  box-shadow:0 0 18px rgba(0,229,255,.25) !important;
+}
+
+.menu .menu-item[data-page="customers"].active,
+.sidebar .menu .menu-item[data-page="customers"].active{
+  background:#00e5ff !important;
+  background-image:none !important;
+  color:#050b14 !important;
+  border-color:#00e5ff !important;
+  box-shadow:0 0 24px rgba(0,229,255,.55) !important;
+}
+
+.menu .menu-item[data-page="customers"].active i,
+.sidebar .menu .menu-item[data-page="customers"].active i{
+  color:#050b14 !important;
+}
+
+/* Alttaki + Müşteri/Firma butonu da mavi kalmasın */
+#btnCustomer{
+  background:linear-gradient(135deg,rgba(0,229,255,.20),rgba(0,229,255,.06)) !important;
+  color:#00e5ff !important;
+  border:1px solid #00e5ff !important;
+  box-shadow:0 0 18px rgba(0,229,255,.20) !important;
+}
+
+#btnCustomer:hover{
+  background:#00e5ff !important;
+  color:#050b14 !important;
+}
