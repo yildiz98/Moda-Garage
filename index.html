@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Moda Garage" />
+  <title>Moda Garage Araç Takip</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <img src="logo.png" alt="Moda Garage" class="login-brand-img">
+      <h1>Moda Garage</h1>
+      <p>Admin / Personel Girişi</p>
+
+      <form id="loginForm">
+        <div class="field">
+          <label>E-posta</label>
+          <input id="loginEmail" type="email" placeholder="admin@firma.com" required />
+        </div>
+        <div class="field">
+          <label>Şifre</label>
+          <input id="loginPassword" type="password" placeholder="Şifre" required />
+        </div>
+        <button class="btn primary login-btn" type="submit">Giriş Yap</button>
+      </form>
+
+      <p class="login-help">
+        Yetki, Firebase'te oluşturduğun e-posta adresine göre belirlenir.
+      </p>
+      <p id="loginError" class="login-error hidden"></p>
+    </div>
+  </div>
+<div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="logo.png" alt="Moda Garage" class="brand-img">
+        <div>
+          <h1>Moda Garage</h1>
+          <p>Profesyonel Araç Servis Takip</p>
+        </div>
+      </div>
+
+   <nav class="menu">
+  <button class="menu-item active" data-page="dashboard">
+    <i class="fa-solid fa-house"></i> Dashboard
+  </button>
+
+  <button class="menu-item" data-page="customers">
+    <i class="fa-solid fa-users"></i> Müşteriler / Firmalar
+  </button>
+
+  <button class="menu-item" data-page="vehicles">
+    <i class="fa-solid fa-car"></i> Araçlar
+  </button>
+
+  <button class="menu-item" data-page="services">
+    <i class="fa-solid fa-screwdriver-wrench"></i> Servis Kayıtları
+  </button>
+
+  <button class="menu-item" data-page="payments">
+    <i class="fa-solid fa-money-bill-wave"></i> Tahsilatlar
+  </button>
+
+  <button class="menu-item" data-page="debts">
+    <i class="fa-solid fa-file-invoice-dollar"></i> Borç Takibi
+  </button>
+
+  <button class="menu-item" data-page="reports">
+    <i class="fa-solid fa-chart-column"></i> Raporlar
+  </button>
+
+  <button class="menu-item" data-page="settings">
+    <i class="fa-solid fa-gear"></i> Ayarlar
+  </button>
+</nav>
+    </aside>
+
+    <button id="mobileMenuBtn" class="mobile-menu-btn">☰ Menü</button>
+    <div id="mobileOverlay" class="mobile-overlay"></div>
+
+    <main class="content">
+      <header class="header">
+        <div class="header-brand">
+          <img src="logo.png" alt="Moda Garage" class="header-brand-logo">
+        </div>
+        <div>
+          <h2 id="pageTitle">Dashboard</h2>
+          <p id="pageSubtitle">Her ekranda isim, firma veya plaka ile global arama</p>
+        </div>
+
+        <div class="user-bar" id="userBar"><span id="activeUserText">Kullanıcı</span><button class="small-btn" id="logoutBtn">Çıkış</button></div>
+
+        <div class="search-area">
+          <input id="globalSearch" autocomplete="off" placeholder="İsim, soyisim, firma adı veya plaka ara..." />
+          <div id="searchResults" class="search-results hidden"></div>
+        </div>
+      </header>
+
+      <section id="dashboard" class="page active"></section>
+      <section id="customers" class="page"></section>
+      <section id="vehicles" class="page"></section>
+      <section id="services" class="page"></section>
+      <section id="payments" class="page"></section>
+      <section id="debts" class="page"></section>
+      <section id="reports" class="page"></section>
+      <section id="settings" class="page"></section>
+      <section id="detail" class="page"></section>
+    </main>
+  </div>
+
+  <div class="quick-actions">
+    <button class="action primary" id="btnCustomer">+ Müşteri/Firma</button>
+    <button class="action" id="btnVehicle">+ Araç</button>
+    <button class="action" id="btnService">+ Servis</button>
+    <button class="action" id="btnPayment">+ Tahsilat</button>
+  </div>
+
+  <dialog id="modal">
+    <form id="modalForm" method="dialog">
+      <div class="modal-head">
+        <h3 id="modalTitle">Kayıt Ekle</h3>
+        <button type="button" class="icon-btn" id="closeModal">×</button>
+      </div>
+      <div id="modalBody"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" id="cancelModal">Vazgeç</button>
+        <button type="submit" class="btn primary">Kaydet</button>
+      </div>
+    </form>
+  </dialog>
+
+  
+  <script type="module" src="app.js?v=1781020002"></script>
+</body>
+</html>

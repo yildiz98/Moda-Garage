@@ -1,0 +1,99 @@
+BAŞKA GARAJA UYARLAMA REHBERİ
+
+Bu paket farklı garajlara uyarlanabilir hale getirildi.
+Sistemin geri kalan müşteri, araç, servis, tahsilat, admin/personel yetki mantığı aynıdır.
+
+1) GARAj ADI / LOGO / VERİ HAVUZU
+
+firebase-config.js dosyasını aç ve en alttaki GARAGE_INFO bölümünü değiştir:
+
+export const GARAGE_INFO = {
+  name: "Örnek Garaj",
+  shortName: "Ö.Garaj",
+  subtitle: "Profesyonel Araç Servis Takip",
+  logo: "logo.png",
+  slug: "ornek-garaj"
+};
+
+name      : Programda, çıktılarda ve yazdırma ekranlarında görünen garaj adı.
+shortName : Telefona ana ekrana eklenince kısa isim.
+subtitle  : Sol menü altında görünen açıklama.
+logo      : Logo dosyası adı. Yeni logo kullanacaksan aynı klasöre koy.
+slug      : Firebase ortak veri havuzu adı. Her garaj için farklı olmalı.
+
+ÖNEMLİ:
+Her farklı garaja ayrı veri havuzu istiyorsan slug mutlaka farklı olsun.
+Örnek:
+- hickorkmaz-garaj
+- yildiz-oto
+- mert-servis
+
+2) LOGO DEĞİŞTİRME
+
+En kolay yöntem:
+- Yeni logoyu logo.png adıyla bu klasöre koy.
+- Eski logo.png dosyasının üstüne yaz.
+
+İstersen farklı isim de kullanabilirsin:
+logo: "yeni-logo.png"
+
+3) ADMİN / PERSONEL KULLANICILARI
+
+firebase-config.js içindeki şu alanları değiştir:
+
+export const ADMIN_EMAILS = [
+  "admin@ornekgaraj.com"
+];
+
+export const PERSONEL_EMAILS = [
+  "personel1@ornekgaraj.com",
+  "personel2@ornekgaraj.com"
+];
+
+Admin:
+- Tüm fiyatları, tahsilatı, borçları ve raporları görür.
+- Servis fiyatlandırması yapar.
+
+Personel:
+- Müşteri/firma kaydı yapar.
+- Araç kaydı yapar.
+- Servis kaydı açar.
+- Fiyat, tahsilat, borç ve rapor ekranlarını görmez.
+
+4) FIREBASE AUTHENTICATION
+
+Firebase Console > Authentication > Users kısmında yukarıdaki e-postaları oluştur.
+Şifreleri Firebase üzerinden sen belirlersin.
+Kodda şifre yazmana gerek yok.
+
+5) FIRESTORE KURALI
+
+Mevcut sistem şu yolu kullanır:
+garages / slug
+
+Örnek slug "ornek-garaj" ise veri yolu:
+garages / ornek-garaj
+
+Basit kural:
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /garages/{garageId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+
+6) MANIFEST / ANA EKRAN ADI
+
+manifest.json dosyasında istersen şu alanları da garaja göre değiştir:
+
+"name": "Örnek Garaj Araç Takip",
+"short_name": "Örnek",
+"description": "Örnek Garaj araç servis ve cari takip sistemi"
+
+7) DİKKAT
+
+Aynı Firebase projesini birden fazla garajda kullanabilirsin.
+Ama veri karışmaması için her garajın slug değeri farklı olmalı.
