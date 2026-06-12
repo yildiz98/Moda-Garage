@@ -1438,3 +1438,52 @@ tr:hover td{
     background:linear-gradient(180deg,rgba(9,21,33,.96),rgba(5,12,20,.96)) !important;
   }
 }
+/* MODAL / MÜŞTERİ FİRMA EKLE PENCERESİ DÜZELTME */
+
+dialog,
+#modal,
+#modalForm{
+  background:linear-gradient(180deg,#08131f,#050b14) !important;
+  color:#f3fbff !important;
+  border:1px solid #00e5ff !important;
+  box-shadow:0 0 35px rgba(0,229,255,.25) !important;
+}
+
+.modal-head h3,
+#modalForm h3{
+  color:#f3fbff !important;
+}
+
+#modalForm label{
+  color:#9fb6c4 !important;
+}
+
+#modalForm input,
+#modalForm select,
+#modalForm textarea{
+  background:#06101b !important;
+  color:#f3fbff !important;
+  border:1px solid rgba(0,229,255,.45) !important;
+}
+
+#modalForm input:focus,
+#modalForm select:focus,
+#modalForm textarea:focus{
+  border-color:#00e5ff !important;
+  box-shadow:0 0 0 3px rgba(0,229,255,.18) !important;
+}
+
+#modalForm button,
+.modal-actions .btn,
+.modal-actions .small-btn{
+  background:linear-gradient(135deg,rgba(0,229,255,.20),rgba(0,229,255,.06)) !important;
+  border:1px solid #00e5ff !important;
+  color:#00e5ff !important;
+}
+
+#modalForm button:hover,
+.modal-actions .btn:hover,
+.modal-actions .small-btn:hover{
+  background:#00e5ff !important;
+  color:#050b14 !important;
+}
