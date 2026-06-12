@@ -19,7 +19,6 @@ export const PERSONEL_EMAILS = [
   "personel@modagarage.com"
 ];
 
-
 // GARAJ BİLGİLERİ
 // Başka garaja uyarlamak için en çok bu alanları değiştir.
 export const GARAGE_INFO = {

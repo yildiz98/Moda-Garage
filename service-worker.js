@@ -1,10 +1,10 @@
-const CACHE_NAME = 'moda-garage-v2-neon-1781275000';
+const CACHE_NAME = 'moda-garage-v8-neon-1781285505';
 const ASSETS = [
   './',
   './index.html',
-  './style.css',
-  './app.js',
-  './firebase-config.js',
+  './style.css?v=v8-neon',
+  './app.js?v=v8-neon',
+  './firebase-config.js?v=v8-neon',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
