@@ -973,3 +973,32 @@ tr:hover td{background:rgba(0,229,255,.04) !important;}
 ::-webkit-scrollbar-track{background:#050b14;}
 ::-webkit-scrollbar-thumb{background:rgba(0,229,255,.42);border-radius:999px;}
 ::-webkit-scrollbar-thumb:hover{background:#00e5ff;}
+
+.quick-actions{
+  background:transparent !important;
+}
+
+.quick-actions .action{
+  background:linear-gradient(
+    135deg,
+    rgba(0,229,255,.18),
+    rgba(0,229,255,.05)
+  ) !important;
+
+  border:1px solid #00e5ff !important;
+  color:#00e5ff !important;
+
+  box-shadow:
+    0 0 18px rgba(0,229,255,.20),
+    inset 0 0 10px rgba(0,229,255,.05);
+
+  font-weight:700;
+}
+
+.quick-actions .action:hover{
+  background:#00e5ff !important;
+  color:#050b14 !important;
+
+  box-shadow:
+    0 0 28px rgba(0,229,255,.65);
+}
