@@ -23,6 +23,29 @@ button,input,select,textarea{font:inherit}
   font-weight:900;color:#04111d;background:linear-gradient(135deg,var(--accent),#60a5fa);
 }
 .brand h1{font-size:18px;margin:0}.brand p{font-size:12px;color:var(--muted);margin:3px 0 0}
+/* Müşteri / Firma menü düzeltmesi */
+.menu-item[data-page="customers"]{
+  background:linear-gradient(180deg,rgba(6,16,27,.95),rgba(3,10,18,.95)) !important;
+  color:#d8eaf2 !important;
+  border:1px solid rgba(0,229,255,.18) !important;
+}
+
+.menu-item[data-page="customers"] i{
+  color:#d8eaf2 !important;
+}
+
+.menu-item[data-page="customers"]:hover,
+.menu-item[data-page="customers"].active{
+  background:linear-gradient(135deg,#00e5ff,#00a9bd) !important;
+  color:#050b14 !important;
+  border-color:#00e5ff !important;
+  box-shadow:0 0 26px rgba(0,229,255,.45) !important;
+}
+
+.menu-item[data-page="customers"]:hover i,
+.menu-item[data-page="customers"].active i{
+  color:#050b14 !important;
+}
 .menu{display:grid;gap:8px}
 .menu-item{
   width:100%;text-align:left;border:1px solid transparent;color:var(--muted);
