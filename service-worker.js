@@ -1,4 +1,4 @@
-const CACHE_NAME = 'moda-garage-v2-firebase-fixed';
+const CACHE_NAME = 'moda-garage-v2-neon-1781275000';
 const ASSETS = [
   './',
   './index.html',
