@@ -1,22 +1,22 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyD-790uItEQbAvm_G5itv7oVqExn4zFEiY",
-  authDomain: "arac-servis-takip-c707b.firebaseapp.com",
-  projectId: "arac-servis-takip-c707b",
-  storageBucket: "arac-servis-takip-c707b.firebasestorage.app",
-  messagingSenderId: "494798332130",
-  appId: "1:494798332130:web:336ed610cf651fcf95febb",
-  measurementId: "G-X2YBDXX2R1"
+  apiKey: "AIzaSyCEVFu2-N4mtJeIu_d4m0ZtUTp7Y3_U25U",
+  authDomain: "moda-garage.firebaseapp.com",
+  projectId: "moda-garage",
+  storageBucket: "moda-garage.firebasestorage.app",
+  messagingSenderId: "292033497762",
+  appId: "1:292033497762:web:0b70968c6f5997c9b8a5fb",
+  measurementId: "G-4MSKJZH0QE"
 };
 
 // Firebase Authentication > Users kısmında oluşturduğun hesaplar.
 // Admin tüm yetkilere sahiptir.
 export const ADMIN_EMAILS = [
-  "admin@aractakip.com"
+  "admin@modagarage.com"
 ];
 
 // Personel sadece müşteri/firma, araç ve servis kaydı yapabilir.
 export const PERSONEL_EMAILS = [
-  "personel1@aractakip.com"
+  "personel@modagarage.com"
 ];
 
 
